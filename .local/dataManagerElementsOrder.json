@@ -1,0 +1,105 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process_PONR_FS.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dicTransactionProgress&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DicConfig",
+        "in_TiTransactionItem"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process_PONR.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionProgress&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/RetrieveTransactionProgress.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "JobjectProgress&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TiTransactionItem",
+        "out_DicTransactionProgress",
+        "in_IntNumberOfRetries",
+        "in_TspRetryInterval"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/UpdateTransactionProgress.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strTransactionProgress&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DicTransactionProgress",
+        "in_StrCheckpoint",
+        "in_TiTransactionItem",
+        "in_TspRetryInterval",
+        "in_IntNumberOfRetries",
+        "in_StrOrchestratorFolderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
