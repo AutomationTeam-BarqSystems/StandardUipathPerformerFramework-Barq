@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="UpdateTransactionProgress" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_DicTransactionProgress" Type="InArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="in_StrCheckpoint" Type="InArgument(x:String)" />
     <x:Property Name="in_TiTransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="in_TspRetryInterval" Type="InArgument(x:TimeSpan)" />
     <x:Property Name="in_IntNumberOfRetries" Type="InArgument(x:Int32)" />
@@ -13,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1080.8,1397.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1080.8,1288</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdateTransactionProgress_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -87,7 +86,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Component Name: UpdateTransactionProgress&#xA;Input Arguments: in_DicTransactionProgress, in_TiTransactionItem, in_strOrchestratorFolderPath, in_StrCheckpoint, in_TspRetryInterval, in_IntNumberOfRetries&#xA;Output Arguments: N/A&#xA;Description:&#xA;1- Assign the checkpoint number&#xA;2- convert dictionary to json object &#xA;3- deserialize the json object to string &#xA;4- set transaction progress with the string&#xA;" DisplayName="UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="744,1332.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Component Name: UpdateTransactionProgress&#xA;Input Arguments: in_DicTransactionProgress, in_TiTransactionItem, in_strOrchestratorFolderPath, in_StrCheckpoint, in_TspRetryInterval, in_IntNumberOfRetries&#xA;Output Arguments: N/A&#xA;Description:&#xA;1- Assign the checkpoint number&#xA;2- convert dictionary to json object &#xA;3- deserialize the json object to string &#xA;4- set transaction progress with the string&#xA;" DisplayName="UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="699.2,1223.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTransactionProgress" />
     </Sequence.Variables>
@@ -97,7 +96,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="681.6,1072" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="636.8,962.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -105,51 +104,30 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Sequence - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="644.8,818.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Sequence - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="600,708" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:RetryScope DisplayName="Retry Scope - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="582.4,729.6" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_IntNumberOfRetries]" RetryInterval="[in_TspRetryInterval]">
+          <ui:RetryScope DisplayName="Retry Scope - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="537.6,619.2" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_IntNumberOfRetries]" RetryInterval="[in_TspRetryInterval]">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
-                <Sequence DisplayName="Action - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="540.8,530.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Action - UpdateTransactionProgress" sap:VirtualizedContainerService.HintSize="496,420" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MultipleAssign sap2010:Annotation.AnnotationText="1) in_DicTransactionProgress(&quot;Checkpoint&quot;)&#xA;2) strTransactionProgress" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                    <ui:MultipleAssign.AssignOperations>
-                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">[in_DicTransactionProgress("Checkpoint")]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[in_StrCheckpoint]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                          <ui:AssignOperation.To>
-                            <OutArgument x:TypeArguments="x:String">[strTransactionProgress]</OutArgument>
-                          </ui:AssignOperation.To>
-                          <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject( in_DicTransactionProgress)]</InArgument>
-                          </ui:AssignOperation.Value>
-                        </ui:AssignOperation>
-                      </scg:List>
-                    </ui:MultipleAssign.AssignOperations>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:MultipleAssign>
-                  <ui:SetTransactionProgress DisplayName="Set Transaction Progress" FolderPath="in_strOrchestratorFolderPath" sap:VirtualizedContainerService.HintSize="478.4,217.6" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_1" Progress="[strTransactionProgress]" TransactionItem="[in_TiTransactionItem]">
+                  <Assign DisplayName="Assign Transaction Progress" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strTransactionProgress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.JsonConvert.SerializeObject( in_DicTransactionProgress)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:SetTransactionProgress DisplayName="Set Transaction Progress" FolderPath="in_strOrchestratorFolderPath" sap:VirtualizedContainerService.HintSize="433.6,217.6" sap2010:WorkflowViewState.IdRef="SetTransactionProgress_1" Progress="[strTransactionProgress]" TransactionItem="[in_TiTransactionItem]">
                     <ui:SetTransactionProgress.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:SetTransactionProgress.TimeoutMS>
@@ -170,7 +148,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="507.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="603.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -181,7 +159,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw DisplayName="Throw SE" Exception="[new SystemException(exception.Message)]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <Throw DisplayName="Throw SE" Exception="[new SystemException(exception.Message)]" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="Throw_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
